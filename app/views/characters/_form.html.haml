@@ -1,0 +1,7 @@
+= form_for @character, url: [@character] do |f|
+  = render "shared/error", model: @character
+  = f.text_field :name, autofocus: true, class: :required
+  = f.text_field :health, class: :required
+  = f.text_field :hit, class: :required
+  = f.submit
+

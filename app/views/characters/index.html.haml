@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Name
+    %th health
+    %th hit
+    %th destroy?
+  - @all_characters.each do |character|
+    %tr
+      %td=link_to character.name, [:edit, character]
+      %td=character.health
+      %td=character.hit
+
+=link_to :add, [:new, :character]
