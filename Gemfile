@@ -13,6 +13,11 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
 # Use Faml: Faster implementation of Haml template language
 gem 'faml'
+# Use JQuery
+gem 'jquery-rails'
+# Use Materialize
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons' 
 # Coffee lover
 gem 'coffee-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

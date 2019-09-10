@@ -1,0 +1,16 @@
+= form_for @fight, url: [:fight] do |f|
+  = render "shared/error", model: @fight
+  .row
+    .input-field.col.s6
+      = f.collection_select :player_one_id, @all_characters, :id, :name
+    .input-field.col.s6
+      = f.collection_select :player_two_id, @all_characters, :id, :name
+  
+  = f.submit :submit, class: "btn waves-effect waves-light"
+
+:javascript
+  $(document).ready(function() {
+    $('#fight_player_one_id').formSelect();
+    $('#fight_player_two_id').formSelect();
+    return 
+  });

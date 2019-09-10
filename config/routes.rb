@@ -4,5 +4,10 @@ Rails.application.routes.draw do
 
   resources :menu, only: :index
   resources :characters
-  
+
+  controller :fights do
+    get "player_selector", action: :player_selector
+    post "fight", action: :fight
+  end
+
 end

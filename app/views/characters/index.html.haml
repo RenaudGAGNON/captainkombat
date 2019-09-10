@@ -1,13 +1,19 @@
 %table
   %tr
     %th Name
-    %th health
-    %th hit
+    %th Health
+    %th Hit
+    %th Victory
+    %th Exp.
     %th destroy?
   - @all_characters.each do |character|
     %tr
       %td=link_to character.name, [:edit, character]
       %td=character.health
       %td=character.hit
+      %td=character.victories.count
+      %td=character.experience
+      %td=link_to :delete, [character], method: :delete, data: { confirm: 'Really?' }
 
-=link_to :add, [:new, :character]
+.fixed-action-btn
+  =link_to "+", [:new, :character], class: "btn-floating btn-large waves-effect waves-light green"

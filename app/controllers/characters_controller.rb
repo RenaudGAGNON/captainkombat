@@ -1,4 +1,6 @@
 class CharactersController < ApplicationController
+  include CharacterConcern
+
   before_action :set_all_characters
   before_action :set_character, only: %w( edit update destroy )
   
@@ -30,13 +32,10 @@ class CharactersController < ApplicationController
 
   def destroy
     @character.destroy
+    render :index
   end
 
 private
-
-  def set_all_characters
-    @all_characters = Character.all
-  end
 
   def set_character
     @character = @all_characters.find(params[:id])

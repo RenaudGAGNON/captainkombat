@@ -1,7 +1,12 @@
 = form_for @character, url: [@character] do |f|
   = render "shared/error", model: @character
-  = f.text_field :name, autofocus: true, class: :required
-  = f.text_field :health, class: :required
-  = f.text_field :hit, class: :required
-  = f.submit
-
+  .input-field
+    = f.text_field :name, autofocus: true, class: :required
+    = f.label :name
+  .input-field
+    = f.text_field :health, class: :required
+    = f.label :health
+  .input-field
+    = f.text_field :hit, class: :required
+    = f.label :hit
+  = f.submit :submit, class: "btn waves-effect waves-light"
